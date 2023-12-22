@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class HouseController {
     @Autowired
     HouseService houseService;
     
-    @GetMapping("/housedetails")
+    @GetMapping("/house_details")
     public List<House> getDetails(){
 
         return (List<House>) houseService.getHouseDetails();
@@ -39,6 +40,13 @@ public class HouseController {
 
         return houseService.setHouseDetail(data);
     }
+    
+    @PatchMapping("/update/{id}")
+    public House updateHouse(@PathVariable Integer id, @RequestBody House houseData) {
+        return houseService.updateHouseDetail(id, houseData);
+    }
+    
+
     
 
     @DeleteMapping("/housedetail/{id}")

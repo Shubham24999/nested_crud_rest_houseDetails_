@@ -34,6 +34,4 @@ public class House {
     
     @Embedded
     private FamilyMembers members;
-
-    
 }

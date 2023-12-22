@@ -14,7 +14,5 @@ public class HouseModel {
     private Integer noOfMembers;
 
     private Address address;
-
-    
     
 }
