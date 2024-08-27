@@ -34,26 +34,6 @@ public class HouseService {
         return (List<House>) houseRepository.findAll();
     }
 
-    // public House updateHouseDetail(Integer id,House houseData){
-    //     Optional<House> data=houseRepository.findById(id);
-    //     if(data.isPresent()){
-    //         House existingData=data.get();
-    //         if (houseData.getMembers()!=null) {
-    //             existingData.setMembers(houseData.getMembers());
-    //         }else if(houseData.getNoOfMembers()!=null){
-    //             existingData.setNoOfMembers(houseData.getNoOfMembers());
-    //         }else if(houseData.getAddress()!=null){
-    //             if(houseData.getAddress().getHouseName()!=null){
-    //                 // existingData.setAddress(houseData.getHouseName());
-
-    //             }else if(houseData.getAddress().getHouseNumber()!=null){
-    //                 // existingData.setAddress(houseData.getHouseNumber());
-    //             }
-    //         }
-    //     }
-    //     return null;
-    // }
-
     public House updateHouseDetail(Integer id, House updatedHouseData) {
         House existingHouse = houseRepository.findById(id).orElse(null);
         if (existingHouse != null) {
@@ -85,10 +65,6 @@ public class HouseService {
         
 
     }
-
-
-
-
 
     
 }
